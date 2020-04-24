@@ -1,12 +1,32 @@
 // Charts
 let ctx = document.getElementById("monthlySales").getContext("2d");
 let piectx = document.getElementById("deptSales").getContext("2d");
+let yearlyLabel = document.getElementById("yearlyTotal");
 
-let monthlySales = Array.of(12, 9, 3);
+let monthlySales = Array.of(1200, 9000, 3000);
 let monthlyLabels = Array.of("Oct", "Now", "Dec");
 
 let deptSales = Array.of(12, 9, 3);
 let deptLabels = Array.of("Hiking", "Running", "Hunting");
+
+function addYearlyTotal(a, b, c) {
+  return a + b + c;
+}
+
+let octNums = Array.of(1200, 2000, 5000);
+let novNums = Array.of(1100, 1000, 800);
+let decNums = Array.of(1400, 3000, 6000);
+
+let total = Array.of(
+  addYearlyTotal(...octNums),
+  addYearlyTotal(...novNums),
+  addYearlyTotal(...decNums)
+);
+alert(addYearlyTotal(...total));
+
+let yearlyTotal = addYearlyTotal(...monthlySales);
+yearlyLabel.innerHTML = "$" + yearlyTotal;
+
 // Bar
 var myChart = new Chart(ctx, {
   type: "bar",
