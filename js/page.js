@@ -2,15 +2,20 @@
 let ctx = document.getElementById("monthlySales").getContext("2d");
 let piectx = document.getElementById("deptSales").getContext("2d");
 
+let monthlySales = Array.of(12, 9, 3);
+let monthlyLabels = Array.of("Oct", "Now", "Dec");
+
+let deptSales = Array.of(12, 9, 3);
+let deptLabels = Array.of("Hiking", "Running", "Hunting");
 // Bar
 var myChart = new Chart(ctx, {
   type: "bar",
   data: {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: monthlyLabels,
     datasets: [
       {
         label: "# of Sales",
-        data: [12, 19, 3],
+        data: monthlySales,
         backgroundColor: [
           "rgba(238, 184, 104, 1)",
           "rgba(75, 166, 223, 1)",
@@ -39,10 +44,10 @@ var myChart = new Chart(ctx, {
 });
 
 // Dept sales
-var deptSales = new Chart(piectx, {
+var deptSalesChart = new Chart(piectx, {
   type: "pie",
   data: {
-    labels: ["Africa", "Asia", "Europe"],
+    labels: deptLabels,
     datasets: [
       {
         label: "Population (millions)",
@@ -51,7 +56,7 @@ var deptSales = new Chart(piectx, {
           "rgba(75, 166, 223, 1)",
           "rgba(239, 118, 122, 1)",
         ],
-        data: [2478, 5267, 734],
+        data: deptSales,
       },
     ],
   },
