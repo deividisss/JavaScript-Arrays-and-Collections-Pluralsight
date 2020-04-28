@@ -27,6 +27,11 @@ function findOver1000() {
   alert(firstThousand);
 }
 
+function resetNum() {
+  monthlySales.fill(0); // We can use it to reset the dota on the Array
+  myChart.update();
+}
+
 let yearlyTotal = addYearlyTotal(...monthlySales);
 yearlyLabel.innerHTML = "$" + yearlyTotal;
 
