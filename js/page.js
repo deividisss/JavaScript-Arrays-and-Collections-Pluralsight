@@ -3,7 +3,7 @@ let ctx = document.getElementById("monthlySales").getContext("2d");
 let piectx = document.getElementById("deptSales").getContext("2d");
 let yearlyLabel = document.getElementById("yearlyTotal");
 
-let monthlySales = Array.of(1200, 9000, 3000);
+let monthlySales = Array.of(500, 9000, 3000);
 let monthlyLabels = Array.of("Oct", "Now", "Dec");
 
 let deptSales = Array.of(12, 9, 3);
@@ -22,7 +22,10 @@ let total = Array.of(
   addYearlyTotal(...novNums),
   addYearlyTotal(...decNums)
 );
-alert(addYearlyTotal(...total));
+function findOver1000() {
+  let firstThousand = monthlySales.findIndex((element) => element > 1000);
+  alert(firstThousand);
+}
 
 let yearlyTotal = addYearlyTotal(...monthlySales);
 yearlyLabel.innerHTML = "$" + yearlyTotal;
